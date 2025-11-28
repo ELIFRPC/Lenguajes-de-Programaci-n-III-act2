@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Actividad_2
+{
+    public partial class Menu : Form
+    {
+        public Menu()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Saludo saludoForm = new Saludo();
+            saludoForm.Show();
+            this.Hide(); 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InformacionPersonal infoForm = new InformacionPersonal();
+            infoForm.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OperacionesBasicas operacionesForm = new OperacionesBasicas();
+            operacionesForm.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
