@@ -1,0 +1,31 @@
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Actividad_2
+{
+    public partial class Login : Form
+    {
+        public Login()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "1234") // Puedes cambiar la contraseña aquí
+            {
+                Menu menuForm = new Menu();
+                menuForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Contraseña incorrecta. Intenta de nuevo.");
+                txtPassword.Clear();
+                txtPassword.Focus();
+            }
+        }
+    }
+}
