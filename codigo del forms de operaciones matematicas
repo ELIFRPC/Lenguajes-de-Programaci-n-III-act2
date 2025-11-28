@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Actividad_2
+{
+    public partial class OperacionesBasicas : Form
+    {
+        public OperacionesBasicas()
+        {
+            InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double[] numeros = new double[6];
+                numeros[0] = double.Parse(txtNum1.Text);
+                numeros[1] = double.Parse(txtNum2.Text);
+                numeros[2] = double.Parse(txtNum3.Text);
+                numeros[3] = double.Parse(txtNum4.Text);
+                numeros[4] = double.Parse(txtNum5.Text);
+                numeros[5] = double.Parse(txtNum6.Text);
+
+                // Validar que no haya división entre cero
+                if (numeros[1] == 0 || numeros[2] == 0 || numeros[3] == 0 || numeros[4] == 0 || numeros[5] == 0)
+                {
+                    MessageBox.Show("No se puede dividir entre cero.");
+                    return;
+                }
+
+                double resultado = numeros[0] / numeros[1] / numeros[2] / numeros[3] / numeros[4] / numeros[5];
+                txtResultado.Text = resultado.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingresa números válidos.");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Menu menuForm = new Menu();
+            menuForm.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double[] numeros = new double[6];
+                numeros[0] = double.Parse(txtNum1.Text);
+                numeros[1] = double.Parse(txtNum2.Text);
+                numeros[2] = double.Parse(txtNum3.Text);
+                numeros[3] = double.Parse(txtNum4.Text);
+                numeros[4] = double.Parse(txtNum5.Text);
+                numeros[5] = double.Parse(txtNum6.Text);
+
+                double resultado = numeros.Sum();
+                txtResultado.Text = resultado.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingresa números válidos.");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double[] numeros = new double[6];
+                numeros[0] = double.Parse(txtNum1.Text);
+                numeros[1] = double.Parse(txtNum2.Text);
+                numeros[2] = double.Parse(txtNum3.Text);
+                numeros[3] = double.Parse(txtNum4.Text);
+                numeros[4] = double.Parse(txtNum5.Text);
+                numeros[5] = double.Parse(txtNum6.Text);
+
+                double resultado = numeros[0] - numeros[1] - numeros[2] - numeros[3] - numeros[4] - numeros[5];
+                txtResultado.Text = resultado.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingresa números válidos.");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double[] numeros = new double[6];
+                numeros[0] = double.Parse(txtNum1.Text);
+                numeros[1] = double.Parse(txtNum2.Text);
+                numeros[2] = double.Parse(txtNum3.Text);
+                numeros[3] = double.Parse(txtNum4.Text);
+                numeros[4] = double.Parse(txtNum5.Text);
+                numeros[5] = double.Parse(txtNum6.Text);
+
+                double resultado = numeros[0] * numeros[1] * numeros[2] * numeros[3] * numeros[4] * numeros[5];
+                txtResultado.Text = resultado.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingresa números válidos.");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            txtNum1.Clear();
+            txtNum2.Clear();
+            txtNum3.Clear();
+            txtNum4.Clear();
+            txtNum5.Clear();
+            txtNum6.Clear();
+            txtResultado.Clear();
+        }
+    }
+}
